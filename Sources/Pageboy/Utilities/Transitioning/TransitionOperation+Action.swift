@@ -23,7 +23,7 @@ internal extension TransitionOperation {
         /// this will be the opposite of direction on the horizontal axis.
         let semanticDirection: PageboyViewController.NavigationDirection
         /// The orientation of the page view controller.
-        let orientation: UIPageViewControllerNavigationOrientation
+        let orientation: UIPageViewController.NavigationOrientation
         
     }
 }
@@ -38,18 +38,18 @@ internal extension TransitionOperation.Action {
             switch semanticDirection {
                 
             case .reverse:
-                return kCATransitionFromLeft
+                return CATransitionSubtype.fromLeft.rawValue
             default:
-                return kCATransitionFromRight
+                return CATransitionSubtype.fromRight.rawValue
             }
             
         case .vertical:
             switch semanticDirection {
                 
             case .reverse:
-                return kCATransitionFromBottom
+                return CATransitionSubtype.fromBottom.rawValue
             default:
-                return kCATransitionFromTop
+                return CATransitionSubtype.fromTop.rawValue
             }
         }
     }
